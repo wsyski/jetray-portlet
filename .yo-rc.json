@@ -1,0 +1,16 @@
+{
+  "generator-jetray": {
+    "liferayHome": "/opt/java/liferay/arena-7.2.0-ga1/bundles",
+    "portletName": "org.jetray.app9043",
+    "portletTitle": "Jetray Portlet",
+    "portletCategory": "category.sample",
+    "framework": "Angular",
+    "sassSupport": true,
+    "buildsys": "npm/yarn",
+    "packageManager": "npm",
+    "portletInstanceable": "false",
+    "appFile": "index.html",
+    "portletPath": "org.jetray.app9043",
+    "portletNameCleaned": "org_jetray_app9043"
+  }
+}
