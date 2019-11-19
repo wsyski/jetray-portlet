@@ -1,7 +1,7 @@
 <section>
     <nav class='navbar navbar-default'>
       <ul class='nav nav-pills'>
-          <li class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" routerLink="/">Tasks</a></li>
+          <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><a class="nav-link" routerLink="/">Tasks</a></li>
           <li class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" routerLink="/about">About</a></li>
           <li class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" routerLink="/staff">Staff</a></li>
       </ul>
