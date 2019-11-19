@@ -9,21 +9,22 @@ import {StaffListComponent} from "./staff/components/staff-list.component";
 
 import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
-import {UIRouterModule} from "@uirouter/angular";
-import {uiRouterConfigFn} from "./app.routerconfig";
+import {RouterModule, Routes} from '@angular/router';
+import {NotFoundComponent} from './not-found.component';
+import {AlwaysDenyGuard} from './always-deny.guard';
 
-let tasksState = { name: 'tasks', url: '/tasks',  component: TaskListComponent }; 
-let aboutState = { name: 'about', url: '/about',  component: AboutComponent };
-let staffState = { name: 'staff', url: '/staff',  component: StaffListComponent };
-
+const routes: Routes = [
+    {path: '', pathMatch: 'full', component: TaskListComponent},
+    {path: 'about', component: AboutComponent},
+    {path: 'staff', component: StaffListComponent},
+    {path: '**', component: NotFoundComponent, canActivate: [AlwaysDenyGuard]}
+];
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
-        UIRouterModule.forRoot({ states: [ tasksState, aboutState, staffState ], 
-                                 config: uiRouterConfigFn, 
-                                 useHash: true })
+        RouterModule.forRoot(routes, {useHash: true})
     ],
     declarations: [
         AppComponent,
@@ -31,8 +32,11 @@ let staffState = { name: 'staff', url: '/staff',  component: StaffListComponent 
         TaskListComponent,
         AboutComponent,
         StaffListComponent,
+        NotFoundComponent
     ],
-    providers: [],
+    providers: [
+        AlwaysDenyGuard
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
