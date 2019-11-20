@@ -8,10 +8,10 @@ import {TaskComponent} from "./todo/components/task.component";
 import {StaffListComponent} from "./staff/components/staff-list.component";
 
 import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
 import {RouterModule, Routes} from '@angular/router';
 import {NotFoundComponent} from './not-found.component';
 import {AlwaysDenyGuard} from './always-deny.guard';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
     {path: '', pathMatch: 'full', component: TaskListComponent},
@@ -23,7 +23,7 @@ const routes: Routes = [
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
+        HttpClientModule,
         RouterModule.forRoot(routes, {useHash: true})
     ],
     declarations: [
