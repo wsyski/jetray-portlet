@@ -6,6 +6,10 @@ const appRoot = path.resolve('./src/app');
 
 module.exports = {
     mode: 'development',
+    optimization: {
+        minimize: false,
+        noEmitOnErrors: true
+    },
     bail: true,
     entry: {
         // NOTE: entry settings will be overridden when invoked from gulp
