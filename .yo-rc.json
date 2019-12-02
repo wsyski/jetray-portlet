@@ -1,6 +1,6 @@
 {
   "generator-jetray": {
-    "liferayHome": "/opt/java/liferay/arena-7.2.0-ga1/bundles",
+    "liferayHome": "/opt/java/liferay/arena-7.2.1-ga2/bundles",
     "portletName": "org.jetray.app9043",
     "portletTitle": "Jetray Portlet",
     "portletCategory": "category.sample",
